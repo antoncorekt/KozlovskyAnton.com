@@ -12,5 +12,29 @@
 
     <artifactId>rest</artifactId>
     <version>1.0-LocalVersion</version>
-    
+
+    <packaging>jar</packaging>
+
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>com.kozlovsky.frontend.rest.MainApp</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+
+
+                </plugin>
+        </plugins>
+    </build>
+
+
+
 </project>
