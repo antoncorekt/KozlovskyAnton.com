@@ -1,0 +1,36 @@
+// all page
+
+----------------------set_language---------------------
+// request
+{
+ header {
+    page: "all",
+    command: "set_language"
+ }
+ content {
+    lan: "rus | eng | pol"
+ }
+}
+//response
+{
+    status
+}
+
+---------------------navigations----------------------
+{
+ header {
+    page: "all",
+    command: "get_page_navigations"
+ }
+ content {
+    curr_page: string
+ }
+}
+//response
+{
+ header,
+ status,
+ content {
+    avaible_page: string?page_array // example "main -> blog -> java -> how_create_blog-SpringMVC"
+ }
+}

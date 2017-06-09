@@ -1,0 +1,13 @@
+// header
+
+{
+  user_ip:string, // users ip for counter in pages
+
+  user_id:string, // user id - is special identeficaroe for auth
+
+  page:string, // in which pages command will be create
+
+  command:string // command whatk user do in page
+
+
+}

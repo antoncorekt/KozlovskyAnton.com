@@ -1,0 +1,14 @@
+// API backend site kozlovsky.com
+//
+//
+//--------------------------------------------------
+
+
+// all pages
+
+// request template
+{
+  header:header,
+  data:content-data
+}
+
