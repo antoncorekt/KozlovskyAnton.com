@@ -1,28 +1,22 @@
 import { Component, Injectable } from '@angular/core';
-import {myHTTPService} from './http/HTTPService';
-
-
+import {myHTTPService} from '../http/HTTPService';
 
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
+  selector: 'lol',
+  templateUrl: './main.component.html',
+  styleUrls: ['./main.component.css'],
   providers: [ myHTTPService]
 })
 
+ 
+export class MainComponent {
 
-
-
-export class AppComponent {
-
-  title:String;
+  content:String;
 
   constructor(private myService: myHTTPService ){
       
   }
-
-
 
   result = this.myService.getConfig('/test').subscribe(res => {
 
@@ -30,7 +24,7 @@ export class AppComponent {
       console.log(res[i]);
     }
     console.log(res);
-    return this.title=JSON.stringify(res[0].data);
+    return this.content=JSON.stringify(res[1].data);
   });
 
 

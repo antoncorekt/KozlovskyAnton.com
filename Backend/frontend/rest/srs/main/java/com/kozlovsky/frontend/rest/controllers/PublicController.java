@@ -1,9 +1,16 @@
 package com.kozlovsky.frontend.rest.controllers;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.node.ArrayNode;
+import com.fasterxml.jackson.databind.node.ObjectNode;
+import com.kozlovsky.common.resources.ResourcesService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import javax.inject.Inject;
 import java.lang.reflect.Method;
 
 /**
@@ -16,18 +23,37 @@ import java.lang.reflect.Method;
 @RequestMapping(value = "/api")
 public class PublicController {
 
+    @Autowired
+    private ResourcesService resourceService;
 
     @ResponseBody
-    @RequestMapping(method = RequestMethod.GET, path = "/test")
+    @RequestMapping(method = RequestMethod.GET, path = "/test", produces = MediaType.APPLICATION_JSON_VALUE)
     public String test(){
-        return "Hello word!";
+        ObjectMapper mapper = new ObjectMapper();
+
+        ArrayNode arrayNode = mapper.createArrayNode();
+
+        ObjectNode objectNode1 = mapper.createObjectNode();
+        objectNode1.put("data", resourceService.getService());
+        objectNode1.put("data2", "Hello Word2!!!");
+
+        ObjectNode objectNode2 = mapper.createObjectNode();
+        objectNode2.put("lol", "Hello Lol!!!");
+        objectNode2.put("lool2", "Hello Lol2!!!");
+        /**
+         * Array contains JSON Objects
+         */
+        arrayNode.add(objectNode1);
+        arrayNode.add(objectNode2);
+
+        return arrayNode.toString();
     }
 
-    //@ResponseBody
+    @ResponseBody
     @RequestMapping(value = "/id", method = RequestMethod.GET)
     public String getPerson() {
 
-        return "Lol";
+        return resourceService.getService();
     }
 
 

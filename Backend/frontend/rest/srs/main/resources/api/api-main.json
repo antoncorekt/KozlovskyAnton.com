@@ -1,7 +1,4 @@
-// all page
 
-----------------------set_language---------------------
-// request
 {
  header {
     page: "all",

@@ -19,6 +19,7 @@
         <module>common-protocol</module>
         <module>common-database</module>
         <module>common-router</module>
+        <module>common-resources</module>
     </modules>
     
 </project>
