@@ -3,15 +3,10 @@ package com.kozlovsky.frontend.rest.controllers;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import com.kozlovsky.common.resources.ResourcesService;
+import com.kozlovsky.common.resources.service.ResourcesService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.http.MediaType;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-
-import javax.inject.Inject;
-import java.lang.reflect.Method;
 
 /**
  * Created by anton on 29.05.17.

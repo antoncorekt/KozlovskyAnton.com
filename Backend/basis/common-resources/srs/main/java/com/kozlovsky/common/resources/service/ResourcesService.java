@@ -1,4 +1,4 @@
-package com.kozlovsky.common.resources;
+package com.kozlovsky.common.resources.service;
 
 import org.springframework.stereotype.Component;
 
@@ -13,7 +13,7 @@ public class ResourcesService {
     ClassLoader classLoader = getClass().getClassLoader();
 
     public String getService(){
-        return classLoader.getResource("pages/en/main.xml").;
+        return "";
     }
 
 }
