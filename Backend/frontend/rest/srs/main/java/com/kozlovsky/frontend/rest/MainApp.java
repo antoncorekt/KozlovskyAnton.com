@@ -1,6 +1,6 @@
 package com.kozlovsky.frontend.rest;
 
-import com.kozlovsky.common.resources.Config;
+import com.kozlovsky.common.resources.ConfigResources;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -13,7 +13,7 @@ import org.springframework.context.annotation.Import;
 @SpringBootApplication
 //@CrossOrigin(origins = "http://localhost:4200")
 @EnableAutoConfiguration
-@Import(value = {Config.class})
+@Import(value = {ConfigResources.class})
 public class MainApp {
 
     public static void main(String[] args) {

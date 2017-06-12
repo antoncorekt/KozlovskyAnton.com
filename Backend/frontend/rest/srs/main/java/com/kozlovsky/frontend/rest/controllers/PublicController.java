@@ -3,6 +3,8 @@ package com.kozlovsky.frontend.rest.controllers;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
+import com.kozlovsky.common.resources.Util.Lang;
+import com.kozlovsky.common.resources.service.FileReaderService;
 import com.kozlovsky.common.resources.service.ResourcesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -21,15 +23,18 @@ public class PublicController {
     @Autowired
     private ResourcesService resourceService;
 
+    @Autowired
+    private FileReaderService fileReaderService;
+
     @ResponseBody
     @RequestMapping(method = RequestMethod.GET, path = "/test", produces = MediaType.APPLICATION_JSON_VALUE)
-    public String test(){
+    public String test() throws Exception{
         ObjectMapper mapper = new ObjectMapper();
 
         ArrayNode arrayNode = mapper.createArrayNode();
 
         ObjectNode objectNode1 = mapper.createObjectNode();
-        objectNode1.put("data", resourceService.getService());
+        objectNode1.put("data", fileReaderService.getValue("main", Lang.POL,"center"));
         objectNode1.put("data2", "Hello Word2!!!");
 
         ObjectNode objectNode2 = mapper.createObjectNode();
@@ -46,9 +51,9 @@ public class PublicController {
 
     @ResponseBody
     @RequestMapping(value = "/id", method = RequestMethod.GET)
-    public String getPerson() {
+    public String getPerson() throws Exception { //handle it!!
 
-        return resourceService.getService();
+        return fileReaderService.getValue("main", Lang.POL,"center");
     }
 
 

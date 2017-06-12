@@ -1,5 +1,7 @@
 package com.kozlovsky.common.resources.filereader;
 
+import com.kozlovsky.common.exceptions.ParserException;
+
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
@@ -16,7 +18,7 @@ public abstract class FileReader {
     }
 
 
-    abstract protected void readFile() throws IOException;
+    abstract protected void readFile() throws IOException,ParserException;
 
 
     abstract public String getValue(String key);
