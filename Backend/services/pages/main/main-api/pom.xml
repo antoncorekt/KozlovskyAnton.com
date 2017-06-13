@@ -6,25 +6,13 @@
 
     <parent>
         <groupId>com.kozlovsky</groupId>
-        <artifactId>kozlosvky.anton</artifactId>
+        <artifactId>main</artifactId>
         <version>1.0-LocalVersion</version>
     </parent>
 
-    <artifactId>services</artifactId>
+    <groupId>com.kozlovsky</groupId>
+    <artifactId>main-api</artifactId>
     <version>1.0-LocalVersion</version>
 
-    <packaging>pom</packaging>
-    <modules>
-        <module>pages</module>
-
-    </modules>
-
-    <dependencies>
-        <dependency>
-            <groupId>com.kozlovsky</groupId>
-            <artifactId>common-router</artifactId>
-            <version>1.0-LocalVersion</version>
-        </dependency>
-    </dependencies>
-
+    
 </project>
