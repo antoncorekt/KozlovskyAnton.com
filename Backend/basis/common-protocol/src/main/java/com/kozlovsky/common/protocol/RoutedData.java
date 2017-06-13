@@ -6,4 +6,19 @@ package com.kozlovsky.common.protocol;
 public class RoutedData {
 
     private String userID;
+
+    public RoutedData() {
+    }
+
+    public RoutedData(String userID) {
+        this.userID = userID;
+    }
+
+    public String getUserID() {
+        return userID;
+    }
+
+    public void setUserID(String userID) {
+        this.userID = userID;
+    }
 }
