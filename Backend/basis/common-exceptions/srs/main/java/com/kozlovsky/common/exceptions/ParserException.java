@@ -3,7 +3,7 @@ package com.kozlovsky.common.exceptions;
 /**
  * Created by anton on 12.06.17.
  */
-public class ParserException extends Exception {
+public class ParserException extends BaseException {
 
     public ParserException(String s) {
         super(s);

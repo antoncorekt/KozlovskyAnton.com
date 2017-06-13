@@ -6,21 +6,20 @@
 
     <parent>
         <groupId>com.kozlovsky</groupId>
-        <artifactId>kozlosvky.anton</artifactId>
+        <artifactId>basis</artifactId>
         <version>1.0-LocalVersion</version>
     </parent>
 
-    <artifactId>basis</artifactId>
+
+    <artifactId>common-datamapper</artifactId>
     <version>1.0-LocalVersion</version>
 
-    <packaging>pom</packaging>
-    <modules>
-        <module>common-exceptions</module>
-        <module>common-protocol</module>
-        <module>common-database</module>
-        <module>common-router</module>
-        <module>common-resources</module>
-        <module>common-datamapper</module>
-    </modules>
+    <dependencies>
+        <dependency>
+            <groupId>com.kozlovsky</groupId>
+            <artifactId>common-exceptions</artifactId>
+            <version>1.0-LocalVersion</version>
+        </dependency>
+    </dependencies>
     
 </project>
