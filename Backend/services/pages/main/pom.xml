@@ -14,5 +14,9 @@
     <artifactId>main</artifactId>
     <version>1.0-LocalVersion</version>
 
+    <modules>
+        <module>main-api</module>
+        <module>main-impl</module>
+    </modules>
     
 </project>

@@ -8,7 +8,10 @@ import java.io.Serializable;
 public class RoutedAction<T extends Serializable> extends Action<T>{
 
     private RoutedData routedData;
-    
+
+    public RoutedAction(){
+
+    }
 
     public RoutedAction(RoutedData routedData) {
         this.routedData = routedData;

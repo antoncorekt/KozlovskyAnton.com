@@ -9,7 +9,9 @@ public class Response<T extends Serializable> extends RoutedAction<T> {
 
     private ResponseStatus status;
 
-    
+    public Response(){
+
+    }
 
     public Response(ResponseStatus status) {
         this.status = status;
