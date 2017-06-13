@@ -12,6 +12,11 @@ import com.kozlovsky.common.router.router.RouterHandler;
 public abstract class AbstractRouterHandler<T extends Handler> implements RouterHandler {
 
     @Override
+    public String getRouteKey(Request<?> msg) {
+        return null;
+    }
+
+    @Override
     public Response<?> handle(Request<?> msg) throws MapperException {
         return getFactoryClass().getHandler(msg).handle(msg);
     }

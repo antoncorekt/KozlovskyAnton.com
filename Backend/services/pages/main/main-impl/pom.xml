@@ -14,5 +14,12 @@
     <artifactId>main-impl</artifactId>
     <version>1.0-LocalVersion</version>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.kozlovsky</groupId>
+            <artifactId>main-api</artifactId>
+            <version>1.0-LocalVersion</version>
+        </dependency>
+    </dependencies>
     
 </project>
