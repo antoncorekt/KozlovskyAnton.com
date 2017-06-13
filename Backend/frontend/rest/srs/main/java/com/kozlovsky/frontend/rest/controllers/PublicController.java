@@ -34,8 +34,9 @@ public class PublicController {
         ArrayNode arrayNode = mapper.createArrayNode();
 
         ObjectNode objectNode1 = mapper.createObjectNode();
-        objectNode1.put("data", fileReaderService.getValue("main", Lang.POL,"center"));
-        objectNode1.put("data2", "Hello Word2!!!");
+        objectNode1.put("data1", fileReaderService.getValue("main", Lang.POL,"center"));
+        objectNode1.put("data2", fileReaderService.getValue("main", Lang.RUS,"center"));
+        objectNode1.put("data3", fileReaderService.getValue("main", Lang.ENG,"center"));
 
         ObjectNode objectNode2 = mapper.createObjectNode();
         objectNode2.put("lol", "Hello Lol!!!");

@@ -12,5 +12,13 @@
 
     <artifactId>common-router</artifactId>
     <version>1.0-LocalVersion</version>
-    
+
+    <dependencies>
+        <dependency>
+            <groupId>com.kozlovsky</groupId>
+            <artifactId>common-protocol</artifactId>
+            <version>1.0-LocalVersion</version>
+        </dependency>
+    </dependencies>
+
 </project>

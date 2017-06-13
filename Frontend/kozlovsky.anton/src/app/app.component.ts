@@ -30,7 +30,8 @@ export class AppComponent {
       console.log(res[i]);
     }
     console.log(res);
-    return this.title=JSON.stringify(res[0].data);
+     console.log(res[0].data);
+    return this.title=JSON.stringify(res[0].data1);
   });
 
 

@@ -15,7 +15,7 @@
 
     <packaging>pom</packaging>
     <modules>
-        <module>pages.pages</module>
+        <module>pages</module>
 
     </modules>
 
