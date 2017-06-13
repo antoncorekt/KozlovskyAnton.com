@@ -1,5 +1,6 @@
 package com.kozlovsky.common.router.api;
 
+import com.kozlovsky.common.exceptions.MapperException;
 import com.kozlovsky.common.protocol.Request;
 import com.kozlovsky.common.protocol.Response;
 
@@ -9,5 +10,5 @@ import com.kozlovsky.common.protocol.Response;
 public interface Handler {
     String getName();
 
-    Response<?> handle(final Request<?> msg);
+    Response<?> handle(final Request<?> msg) throws MapperException;
 }

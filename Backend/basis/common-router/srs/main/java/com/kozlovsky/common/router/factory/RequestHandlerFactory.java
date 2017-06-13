@@ -1,5 +1,6 @@
 package com.kozlovsky.common.router.factory;
 
+import com.kozlovsky.common.protocol.Request;
 import com.kozlovsky.common.router.api.RequestHandler;
 import org.springframework.stereotype.Component;
 
@@ -9,5 +10,8 @@ import org.springframework.stereotype.Component;
 @Component
 public class RequestHandlerFactory<T extends RequestHandler> extends AbstractRouterFactory<T> {
 
-
+    @Override
+    public String getKey(Request<?> msg) {
+        return msg.getHeader().getCommand();
+    }
 }

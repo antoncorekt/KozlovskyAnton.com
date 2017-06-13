@@ -19,6 +19,11 @@
             <artifactId>common-protocol</artifactId>
             <version>1.0-LocalVersion</version>
         </dependency>
+        <dependency>
+            <groupId>com.kozlovsky</groupId>
+            <artifactId>common-datamapper</artifactId>
+            <version>1.0-LocalVersion</version>
+        </dependency>
     </dependencies>
 
 </project>
