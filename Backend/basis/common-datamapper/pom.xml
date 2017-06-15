@@ -10,11 +10,20 @@
         <version>1.0-LocalVersion</version>
     </parent>
 
+    <packaging>jar</packaging>
 
     <artifactId>common-datamapper</artifactId>
     <version>1.0-LocalVersion</version>
 
     <dependencies>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.7.4</version>
+            <type>jar</type>
+        </dependency>
+
         <dependency>
             <groupId>com.kozlovsky</groupId>
             <artifactId>common-exceptions</artifactId>

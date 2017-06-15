@@ -10,6 +10,7 @@
         <version>1.0-LocalVersion</version>
     </parent>
 
+    <packaging>pom</packaging>
 
     <artifactId>main</artifactId>
     <version>1.0-LocalVersion</version>

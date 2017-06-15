@@ -13,5 +13,6 @@
     <artifactId>common-exceptions</artifactId>
     <version>1.0-LocalVersion</version>
 
-    
+    <packaging>jar</packaging>
+
 </project>
