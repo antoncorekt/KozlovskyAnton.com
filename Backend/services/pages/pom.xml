@@ -10,7 +10,7 @@
         <version>1.0-LocalVersion</version>
     </parent>
 
-    <artifactId>pages.pages</artifactId>
+    <artifactId>pages</artifactId>
     <version>1.0-LocalVersion</version>
 
     <packaging>pom</packaging>

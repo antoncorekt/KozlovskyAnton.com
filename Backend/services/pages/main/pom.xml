@@ -6,7 +6,7 @@
 
     <parent>
         <groupId>com.kozlovsky</groupId>
-        <artifactId>pages.pages</artifactId>
+        <artifactId>pages</artifactId>
         <version>1.0-LocalVersion</version>
     </parent>
 
@@ -19,5 +19,7 @@
         <module>main-api</module>
         <module>main-impl</module>
     </modules>
+
+
     
 </project>

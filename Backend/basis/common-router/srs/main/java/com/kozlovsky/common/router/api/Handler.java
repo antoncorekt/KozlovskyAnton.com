@@ -1,6 +1,6 @@
 package com.kozlovsky.common.router.api;
 
-import com.kozlovsky.common.exceptions.MapperException;
+import com.kozlovsky.common.datamapper.MapperException;
 import com.kozlovsky.common.protocol.Request;
 import com.kozlovsky.common.protocol.Response;
 

@@ -6,7 +6,6 @@ import com.kozlovsky.common.router.api.AbstractRequestHandler;
 import com.kozlovsky.pages.main.api.message.CenterLableRequest;
 import com.kozlovsky.pages.main.api.message.CenterLableResponse;
 import com.kozlovsky.pages.main.api.router.MainPageRequestHandler;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Component;
 
 /**

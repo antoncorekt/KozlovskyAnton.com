@@ -1,6 +1,5 @@
 package com.kozlovsky.common.protocol;
 
-import javax.persistence.criteria.CriteriaBuilder;
 import java.io.Serializable;
 
 /**

@@ -15,6 +15,20 @@
     <artifactId>common-datamapper</artifactId>
     <version>1.0-LocalVersion</version>
 
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven.compiler.version}</version>
+                <configuration>
+                    <source>${maven.compiler.source}</source>
+                    <target>${maven.compiler.target}</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
     <dependencies>
 
         <dependency>
@@ -24,11 +38,6 @@
             <type>jar</type>
         </dependency>
 
-        <dependency>
-            <groupId>com.kozlovsky</groupId>
-            <artifactId>common-exceptions</artifactId>
-            <version>1.0-LocalVersion</version>
-        </dependency>
     </dependencies>
     
 </project>

@@ -1,7 +1,6 @@
 package com.kozlovsky.common.resources.filereader;
 
 import com.kozlovsky.common.exceptions.ParserException;
-import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;

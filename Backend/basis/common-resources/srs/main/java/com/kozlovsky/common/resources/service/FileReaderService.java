@@ -3,12 +3,8 @@ package com.kozlovsky.common.resources.service;
 import com.kozlovsky.common.resources.Util.Lang;
 import com.kozlovsky.common.resources.filereader.FileReader;
 import com.kozlovsky.common.resources.filereader.HashFileReader;
-
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import sun.security.krb5.internal.KdcErrException;
 
-import javax.print.DocFlavor;
 import java.io.File;
 
 /**

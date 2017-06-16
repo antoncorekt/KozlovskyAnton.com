@@ -1,7 +1,6 @@
 package com.kozlovsky.common.datamapper;
 
 import com.fasterxml.jackson.core.type.TypeReference;
-import com.kozlovsky.common.exceptions.MapperException;
 
 import java.io.InputStream;
 import java.util.Map;
