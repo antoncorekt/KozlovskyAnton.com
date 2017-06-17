@@ -17,9 +17,9 @@
     <version>1.0-LocalVersion</version>
 
     <modules>
+        <module>basis</module>
         <module>frontend</module>
         <module>services</module>
-        <module>basis</module>
     </modules>
 
     <properties>
@@ -27,8 +27,8 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
         <querydsl.version>3.6.3</querydsl.version>
-        <maven.compiler.source>1.7</maven.compiler.source>
-        <maven.compiler.target>1.7</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
         <maven.compiler.version>3.6.1</maven.compiler.version>
 
     </properties>
@@ -83,6 +83,44 @@
             <artifactId>junit</artifactId>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>2.0.54-beta</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.powermock</groupId>
+            <artifactId>powermock-core</artifactId>
+            <version>1.6.5</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.powermock</groupId>
+            <artifactId>powermock-module-junit4-rule-agent</artifactId>
+            <version>1.6.5</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.powermock</groupId>
+            <artifactId>powermock-module-junit4</artifactId>
+            <version>1.6.5</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!--If we don't include this, we get: -->
+        <!--java.lang.IllegalStateException:
+        Extension API internal error: org.powermock.api.extension.proxyframework.ProxyFrameworkImpl could not be located in classpath.-->
+        <!-- it looks like this is due to some discrepancy in packaging with mockito 2, this may be fixed in Fall 2016:
+        https://groups.google.com/forum/#!topic/powermock/cE4T40Xa_wc -->
+        <dependency>
+            <groupId>org.powermock</groupId>
+            <artifactId>powermock-api-easymock</artifactId>
+            <version>1.6.5</version>
+        </dependency>
+
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>

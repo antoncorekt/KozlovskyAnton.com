@@ -16,11 +16,11 @@
     <packaging>pom</packaging>
     <modules>
         <module>common-exceptions</module>
+        <module>common-datamapper</module>
         <module>common-protocol</module>
         <module>common-database</module>
         <module>common-router</module>
         <module>common-resources</module>
-        <module>common-datamapper</module>
     </modules>
     
 </project>

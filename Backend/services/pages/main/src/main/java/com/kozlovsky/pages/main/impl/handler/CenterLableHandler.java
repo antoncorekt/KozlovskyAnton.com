@@ -3,6 +3,8 @@ package com.kozlovsky.pages.main.impl.handler;
 import com.kozlovsky.common.protocol.ActionHeader;
 import com.kozlovsky.common.protocol.Request;
 import com.kozlovsky.common.protocol.Response;
+import com.kozlovsky.common.protocol.util.ResponseFactory;
+import com.kozlovsky.common.protocol.util.Status;
 import com.kozlovsky.common.resources.Util.Lang;
 import com.kozlovsky.common.resources.service.FileReaderService;
 import com.kozlovsky.common.router.api.AbstractRequestHandler;
@@ -42,9 +44,11 @@ public class CenterLableHandler extends AbstractRequestHandler<CenterLableReques
             response.setLable(fileReaderService.getValue("main",
                     Lang.fromString(msg.getHeader().getLanguage()), "center"));
 
-        }catch (Exception e){
+            return (Response<CenterLableResponse>) ResponseFactory.createResponse(header,response, Status.OK);
 
+        }catch (Exception e){
+            return (Response<CenterLableResponse>) ResponseFactory.createResponse(Status.INTERNAL_SERVER_ERROR, e.getMessage());
         }
-        return null;
+
     }
 }

@@ -24,9 +24,9 @@ public class ResponseFactory {
                 .build();
     }
 
-    public static  Response<?> createResponse( ResponseStatus status){
+    public static  Response<?> createResponse( Status status, String userMsg){
         return new ResponseBuilder<>()
-                .withStatus(status)
+                .withStatus(new ResponseStatus(status,userMsg))
                 .build();
     }
 }

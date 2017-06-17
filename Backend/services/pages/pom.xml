@@ -15,8 +15,8 @@
 
     <packaging>pom</packaging>
     <modules>
-        <module>main</module>
         <module>about</module>
+        <module>main</module>
         <module>portfolio</module>
         <module>blog</module>
     </modules>
