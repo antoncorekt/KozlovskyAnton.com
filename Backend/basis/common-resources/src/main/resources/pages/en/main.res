@@ -1,5 +1,5 @@
 BEGIN center^
-Hello, my name in Anton.
+Hello, my name is Anton.
 END
 BEGIN menu-blog^
 BLOG

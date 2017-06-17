@@ -1,10 +1,16 @@
 package com.kozlovsky.pages.main.impl.handler;
 
+import com.kozlovsky.common.protocol.ActionHeader;
 import com.kozlovsky.common.protocol.Request;
+import com.kozlovsky.common.protocol.Response;
+import com.kozlovsky.common.resources.service.FileReaderService;
+import com.kozlovsky.pages.main.api.message.CenterLableRequest;
+import com.kozlovsky.pages.main.api.message.CenterLableResponse;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
+import org.mockito.Spy;
 import org.mockito.runners.MockitoJUnitRunner;
 
 import static org.hamcrest.CoreMatchers.is;
@@ -19,11 +25,14 @@ public class CenterLableHandlerTest {
     @InjectMocks
     private CenterLableHandler centerLableHandler;
 
-   // private Request<CenterLableRequest> request;
+    @Spy
+    private FileReaderService fileReaderService;
+
+    private Request<CenterLableRequest> request;
 
     @Before
     public void init(){
-      //  request = new Request<>();
+        request = new Request<>();
 
     }
 
@@ -34,7 +43,14 @@ public class CenterLableHandlerTest {
 
     @Test
     public void handleWork() throws Exception {
-        assertThat("center", is("center"));
+        request.setHeader(new ActionHeader("uuid","en","main","center"));
+
+
+        Response<CenterLableResponse> response = centerLableHandler.handleWork(request);
+
+        System.out.println(response.getData().getLable());
+
+        assertThat(response.getData().getLable(), is("Hello, my name is Anton."));
 
     }
 
