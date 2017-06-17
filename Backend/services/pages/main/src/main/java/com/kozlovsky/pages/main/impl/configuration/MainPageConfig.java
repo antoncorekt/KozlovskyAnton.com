@@ -1,6 +1,8 @@
 package com.kozlovsky.pages.main.impl.configuration;
 
+import com.kozlovsky.common.resources.ConfigResources;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Import;
 import org.springframework.stereotype.Component;
 
 /**
@@ -8,5 +10,6 @@ import org.springframework.stereotype.Component;
  */
 @Component
 @ComponentScan("com.kozlovsky.pages.main.impl")
+@Import({ConfigResources.class})
 public class MainPageConfig {
 }

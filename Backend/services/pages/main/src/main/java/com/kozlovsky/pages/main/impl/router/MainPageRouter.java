@@ -17,7 +17,8 @@ public class MainPageRouter extends AbstractRouterHandler<MainPageRequestHandler
     private RouterFactory mainPageRequestHandlerFactory;
 
     @Override
-    protected RouterFactory<MainPageRequestHandler> getFactoryClass() {
+    protected RouterFactory<MainPageRequestHandler> getFactoryClass()
+    {
         return mainPageRequestHandlerFactory;
     }
 
