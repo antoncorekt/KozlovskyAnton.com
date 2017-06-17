@@ -1,5 +1,7 @@
 package com.kozlovsky.common.protocol;
 
+import com.kozlovsky.common.protocol.util.ResponseBuilder;
+
 import java.io.Serializable;
 
 /**
@@ -11,6 +13,12 @@ public class Response<T extends Serializable> extends RoutedAction<T> {
 
     public Response(){
 
+    }
+
+    public Response(ResponseBuilder<T> responseBuilder) {
+        setHeader(responseBuilder.getHeader());
+        setStatus(responseBuilder.getStatus());
+        setData(responseBuilder.getData());
     }
 
     public Response(ResponseStatus status) {

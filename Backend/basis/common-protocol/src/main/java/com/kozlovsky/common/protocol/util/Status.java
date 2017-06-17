@@ -25,6 +25,7 @@ public enum  Status {
 
     }
 
+
     public Integer getCode() {
         return code;
     }

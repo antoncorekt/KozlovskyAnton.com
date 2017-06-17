@@ -1,5 +1,7 @@
 package com.kozlovsky.common.protocol;
 
+import com.kozlovsky.common.protocol.util.Status;
+
 import java.io.Serializable;
 
 /**
@@ -11,6 +13,16 @@ public class ResponseStatus implements Serializable {
     private String message;
 
     public ResponseStatus() {
+    }
+
+    public ResponseStatus(Status status, String userMsg) {
+        code = status.getCode();
+        message = status.getMsg() + " " + userMsg;
+    }
+
+    public ResponseStatus(Status status) {
+        code = status.getCode();
+        message = status.getMsg();
     }
 
     public ResponseStatus(Integer code, String message) {
