@@ -12,8 +12,8 @@ public class ActionHeader implements Serializable {
     private String page;
     private String command;
 
-    public ActionHeader(String uuid) {
-        this.uuid = uuid;
+    public ActionHeader() {
+
     }
 
     public ActionHeader(String uuid, String language, String page, String command) {

@@ -15,6 +15,10 @@ public class Request<T extends Serializable> extends RoutedAction<T> {
         super(routedData);
     }
 
+    public Request(ActionHeader header, RoutedData routedData) {
+        setHeader(header); setRoutedData(routedData);
+    }
+
     public Request(ActionHeader header, T data, RoutedData routedData) {
         super(header, data, routedData);
     }

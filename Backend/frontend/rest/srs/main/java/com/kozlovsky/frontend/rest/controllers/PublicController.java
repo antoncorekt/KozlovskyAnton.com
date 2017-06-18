@@ -1,14 +1,16 @@
 package com.kozlovsky.frontend.rest.controllers;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.node.ArrayNode;
-import com.fasterxml.jackson.databind.node.ObjectNode;
-import com.kozlovsky.common.resources.Util.Lang;
-import com.kozlovsky.common.resources.service.FileReaderService;
-import com.kozlovsky.common.resources.service.ResourcesService;
+
+import com.kozlovsky.common.protocol.*;
+import com.kozlovsky.common.protocol.util.ResponseBuilder;
+import com.kozlovsky.common.protocol.util.ResponseFactory;
+import com.kozlovsky.common.protocol.util.Status;
+import com.kozlovsky.common.router.api.Handler;
+import com.kozlovsky.pages.main.api.message.CenterLableRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
+
 
 /**
  * Created by anton on 29.05.17.
@@ -17,45 +19,29 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @CrossOrigin
 //@EnableAutoConfiguration
-@RequestMapping(value = "/api")
+@RequestMapping(path = "/root",
+        method = RequestMethod.POST,
+        consumes = MediaType.APPLICATION_JSON_VALUE,
+        produces = MediaType.APPLICATION_JSON_VALUE)
 public class PublicController {
 
     @Autowired
-    private ResourcesService resourceService;
+    private Handler mainRouter;
 
-    @Autowired
-    private FileReaderService fileReaderService;
-
-    @ResponseBody
-    @RequestMapping(method = RequestMethod.GET, path = "/test", produces = MediaType.APPLICATION_JSON_VALUE)
-    public String test() throws Exception{
-        ObjectMapper mapper = new ObjectMapper();
-
-        ArrayNode arrayNode = mapper.createArrayNode();
-
-        ObjectNode objectNode1 = mapper.createObjectNode();
-        objectNode1.put("data1", fileReaderService.getValue("main", Lang.POL,"center"));
-        objectNode1.put("data2", fileReaderService.getValue("main", Lang.RUS,"center"));
-        objectNode1.put("data3", fileReaderService.getValue("main", Lang.ENG,"center"));
-
-        ObjectNode objectNode2 = mapper.createObjectNode();
-        objectNode2.put("lol", "Hello Lol!!!");
-        objectNode2.put("lool2", "Hello Lol2!!!");
-        /**
-         * Array contains JSON Objects
-         */
-        arrayNode.add(objectNode1);
-        arrayNode.add(objectNode2);
-
-        return arrayNode.toString();
+    @RequestMapping(path = "/public")
+    public Response<?> getPublicMessage(@RequestBody Request<?> request){
+        try{
+            return mainRouter.handle(request);
+        }
+        catch (Exception e){
+            return ResponseFactory.createResponse(Status.BAD_REQUEST);
+        }
     }
 
-    @ResponseBody
-    @RequestMapping(value = "/id", method = RequestMethod.GET)
-    public String getPerson() throws Exception { //handle it!!
-
-        return fileReaderService.getValue("main", Lang.POL,"center");
-    }
+    @RequestMapping(path = "/test")
+    public Request<?> test(){
+        return new Request<CenterLableRequest>(new ActionHeader("id1","pl","main","center")
+        ,null,new RoutedData("user1"));    }
 
 
 }

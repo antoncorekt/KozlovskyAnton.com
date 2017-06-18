@@ -26,6 +26,11 @@
             <artifactId>common-resources</artifactId>
             <version>1.0-LocalVersion</version>
         </dependency>
+        <dependency>
+            <groupId>com.kozlovsky</groupId>
+            <artifactId>main</artifactId>
+            <version>1.0-LocalVersion</version>
+        </dependency>
     </dependencies>
 
 
