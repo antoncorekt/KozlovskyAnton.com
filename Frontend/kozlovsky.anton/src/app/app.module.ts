@@ -7,10 +7,11 @@ import {RouterModule, Routes} from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { MainComponent} from './main/main.component'
+import { LocalStorageModule } from 'angular-2-local-storage';
 
 const appRoutes: Routes = [
     {path: '', component: MainComponent},
-   
+    {path: 'main', component: MainComponent},
 ];
 
 @NgModule({
@@ -22,7 +23,11 @@ const appRoutes: Routes = [
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    LocalStorageModule.withConfig({
+            prefix: 'my-app',
+            storageType: 'localStorage'
+        })
   ],
   providers: [ Logger] ,
   bootstrap: [AppComponent]

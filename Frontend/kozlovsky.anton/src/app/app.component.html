@@ -1,6 +1,19 @@
-<h1>
-  {{title}}
-  <router-outlet></router-outlet>
-</h1>
+
+<div class="header">  
+  <div class="lang-group" >
+    <div class="lang" id="rus" (click)="onClickMe('ru')">
+     <a routerLink={{page}}>RU</a> 
+    </div>
+    <div class="lang" id="eng" (click)="onClickMe('en')">
+      <a routerLink={{page}}>EN</a> 
+    </div> 
+    <div class="lang" id="pol" (click)="onClickMe('pl')">
+      <a routerLink={{page}}>PL</a> 
+    </div>
+  </div>
+  
+</div>
+<router-outlet ></router-outlet>
+
 
 

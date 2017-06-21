@@ -1,38 +1,41 @@
 import { Component, Injectable } from '@angular/core';
 import {myHTTPService} from './http/HTTPService';
-
-
+import { LanguageService } from './util/LanguageService';
+import { MainComponent } from './main/main.component';
 
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  providers: [ myHTTPService]
+  providers: [ myHTTPService, LanguageService, MainComponent]
 })
 
 
 
 
 export class AppComponent {
-
+  
   title:String;
+  page: String;
 
-  constructor(private myService: myHTTPService ){
-      
+  constructor(private myService: myHTTPService,
+              private langService: LanguageService,
+              private mainPage: MainComponent ){
+      this.page = "/main";
+  }
+
+  clickMessage = '';
+
+  onClickMe(lang: String): void {
+    this.clickMessage = 'You click -> ' +lang;
+    this.langService.setLanguage(lang);
+
+
   }
 
 
 
-  result = this.myService.getConfig('/test').subscribe(res => {
-
-    for(let i=0; i<res.length; i++){
-      console.log(res[i]);
-    }
-    console.log(res);
-     console.log(res[0].data);
-    return this.title=JSON.stringify(res[0].data1);
-  });
 
 
 }
