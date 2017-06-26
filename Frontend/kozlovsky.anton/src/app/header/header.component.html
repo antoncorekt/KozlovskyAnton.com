@@ -1,0 +1,19 @@
+<div class="header">  
+  <div class="lang-group" >
+    <div class="lang" id="rus" (click)="onClickMe('ru')">
+     RU
+    </div>
+    <div class="lang" id="eng" (click)="onClickMe('en')">
+      EN
+    </div> 
+    <div class="lang" id="pol" (click)="onClickMe('pl')">
+      PL
+    </div>
+  </div>
+  
+</div>
+<h4>You choose {{lang}} language </h4>
+<app-main-component [lang] = "lang" *ngIf="page == '/main'">
+   
+</app-main-component>
+<!--<router-outlet [lang] = "lang"></router-outlet> -->

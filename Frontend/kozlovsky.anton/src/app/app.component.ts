@@ -1,4 +1,4 @@
-import { Component, Injectable } from '@angular/core';
+import { Component, Injectable, NgModule } from '@angular/core';
 import {myHTTPService} from './http/HTTPService';
 import { LanguageService } from './util/LanguageService';
 import { MainComponent } from './main/main.component';
@@ -30,12 +30,7 @@ export class AppComponent {
   onClickMe(lang: String): void {
     this.clickMessage = 'You click -> ' +lang;
     this.langService.setLanguage(lang);
-
+    
 
   }
-
-
-
-
-
 }

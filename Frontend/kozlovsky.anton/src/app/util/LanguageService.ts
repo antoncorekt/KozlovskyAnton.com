@@ -1,22 +1,12 @@
-import {  Injectable } from '@angular/core';
+import {  Injectable, EventEmitter } from '@angular/core';
 import { LocalStorageService } from 'angular-2-local-storage';
 
 @Injectable()
 export class LanguageService {
-
-    center:String;
-
+    public langChanged: EventEmitter<String> = new EventEmitter<String>();
 
     constructor ( private localStorageService: LocalStorageService ) {
      
-    }
-
-    setCenter(s:String):void{
-        this.center = s;
-    }
-
-    getCenter():String{
-        return this.center;
     }
 
     getLanguage(): String{
@@ -32,11 +22,14 @@ export class LanguageService {
     }
 
     setLanguage(lang:String):void{
+        
         if (lang==="pl" || lang==="en" || lang==="ru") 
         {
            this.localStorageService.add("lang",lang);
+           this.langChanged.next(lang);
            return;
         }
+        this.langChanged.next("en");
         this.localStorageService.add("lang","en");
     }
 

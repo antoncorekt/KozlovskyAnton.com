@@ -7,17 +7,24 @@ import {RouterModule, Routes} from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { MainComponent} from './main/main.component'
+import { HeaderComponent} from './header/header.component';
+import { LanguageService } from './util/LanguageService';
 import { LocalStorageModule } from 'angular-2-local-storage';
 
 const appRoutes: Routes = [
-    {path: '', component: MainComponent},
-    {path: 'main', component: MainComponent},
+    
+      {
+        path: 'main',
+        component: MainComponent
+      }
 ];
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    MainComponent
+    MainComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -30,6 +37,6 @@ const appRoutes: Routes = [
         })
   ],
   providers: [ Logger] ,
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent] 
 })
 export class AppModule { }

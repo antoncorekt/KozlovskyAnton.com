@@ -1,76 +1,58 @@
-import { Component, Injectable, OnInit } from '@angular/core';
+import { Component, Injectable, OnInit, Input, NgModule, OnChanges, SimpleChange } from '@angular/core';
 import { myHTTPService } from '../http/HTTPService';
 import { LanguageService } from '../util/LanguageService';
+import { AppComponent } from '../app.component';
 
 
 @Component({
-  selector: 'app-main-component',
-  templateUrl: './main.component.html',
-  styleUrls: ['./main.component.css'],
-  providers: [ myHTTPService, LanguageService]
+    selector: 'app-main-component',
+    templateUrl: './main.component.html',
+    styleUrls: ['./main.component.css'],
+    providers: [myHTTPService, LanguageService]
 })
 
+@NgModule({
+    bootstrap: [AppComponent, [LanguageService]]
+})
 
-export class MainComponent implements OnInit {
-  
-  kek="xsaxa";
-  content:String;
-  lol: String;
-  req: Object = {
-              "header": {
-                  "uuid": "id1",
-                  "language": this.langService.getLanguage(),
-                  "page": "main",
-                  "command": "center"
-              },
-              "data": null,
-              "routedData": {
-                  "userID": "user1"
-              }
-    } ;
+@Injectable()
+export class MainComponent implements OnChanges {
 
-  constructor(private myService: myHTTPService,
-              private langService: LanguageService ){
-      this.lol = "BLYYAaa";
-     // langService.setCenter(this.lol);
-      //this.update("lol");
-
-  }
+    @Input() lang: String;
 
 
-  lolol():void{
-     this.lol = this.langService.getLanguage();
-      console.log("this.lol = " + this.lol);
-  }
+    content: String;
 
- ngOnInit(): void {
-      
-    this.content = this.langService.getLanguage();
+    constructor(private myService: myHTTPService,
+        private langService: LanguageService) {
 
-    console.log("-> content" + this.content);
+        this.content = this.langService.getLanguage();
 
-   /* this.lol = this.langService.getLanguage();
-    console.log("this.lol = " + this.lol);
-    let req  = {
-              "header": {
-                  "uuid": "id1",
-                  "language": this.langService.getLanguage(),
-                  "page": "main",
-                  "command": "center"
-              },
-              "data": null,
-              "routedData": {
-                  "userID": "user1"
-              }
-    } ;
+    }
 
-    
-    let result = this.myService.getConfig('/public', req).subscribe(res => {
-         
-    return this.content=JSON.stringify(res.data.lable);
+    ngOnChanges(changes: { [propKey: string]: SimpleChange }) {
 
-       // return true;
-     );*/
-  }
+        let req = {
+            "header": {
+                "uuid": "id1",
+                "language": this.langService.getLanguage(),
+                "page": "main",
+                "command": "center"
+            },
+            "data": null,
+            "routedData": {
+                "userID": "user1"
+            }
+        };
+
+
+        let result = this.myService.getConfig('/public', req).subscribe(res => {
+
+            this.content = JSON.stringify(res.data.lable).replace("\"",'').replace("\"",'');;
+        });
+    }
+
+
+
 
 }
