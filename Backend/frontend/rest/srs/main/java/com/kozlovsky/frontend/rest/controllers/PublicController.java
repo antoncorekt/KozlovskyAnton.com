@@ -38,7 +38,7 @@ public class PublicController {
         }
     }
 
-    @RequestMapping(path = "/test", method = RequestMethod.GET)
+    @RequestMapping(path = "/test")
     public Request<?> test(){
         return new Request<CenterLableRequest>(new ActionHeader("id1","pl","main","center")
         ,null,new RoutedData("user1"));    }

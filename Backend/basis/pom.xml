@@ -21,6 +21,7 @@
         <module>common-database</module>
         <module>common-router</module>
         <module>common-resources</module>
+        <module>common-access</module>
     </modules>
     
 </project>
