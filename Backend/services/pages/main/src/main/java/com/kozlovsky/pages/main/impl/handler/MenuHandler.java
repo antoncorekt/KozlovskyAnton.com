@@ -14,13 +14,16 @@ import org.springframework.stereotype.Component;
 @Component
 public class MenuHandler extends AbstractRequestHandler<MenuRequest, MenuResponse> implements MainPageRequestHandler {
 
+    private static final String COMMAND = "menu";
+
     @Override
     public String getName() {
-        return null;
+        return COMMAND;
     }
 
     @Override
     public Response<MenuResponse> handleWork(Request<MenuRequest> msg) {
+
         return null;
     }
 }

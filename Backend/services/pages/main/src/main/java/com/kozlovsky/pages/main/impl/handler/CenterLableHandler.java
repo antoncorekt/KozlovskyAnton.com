@@ -20,7 +20,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class CenterLableHandler extends AbstractRequestHandler<CenterLableRequest,CenterLableResponse> implements MainPageRequestHandler {
 
-    private final String COMMAND = "center";
+    private static final String COMMAND = "center";
 
     @Autowired
     private FileReaderService fileReaderService;
