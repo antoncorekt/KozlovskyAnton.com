@@ -5,7 +5,7 @@ BEGIN menu-blog^
 My blog
 END
 BEGIN menu-about^
-About my
+About me
 END
 BEGIN menu-portfolio^
 What I DO
