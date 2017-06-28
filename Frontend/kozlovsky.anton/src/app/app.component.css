@@ -1,0 +1,16 @@
+.footer {
+    font-kerning: 50px;
+    color: grey;
+
+    text-align: center;
+position: relative;
+	margin-top: -15px; /* отрицательное значение высоты футера */
+	height: 15px;
+	clear:both;
+  padding: 3px;
+  background-color: #efefef;
+}
+
+.main-style{
+  background-image:url(../assets/img/fon_3.jpg);
+}

@@ -22,11 +22,12 @@ export class MainComponent implements OnChanges {
 
 
     content: String;
+    menuData: Object;
 
     constructor(private myService: myHTTPService,
         private langService: LanguageService) {
 
-        this.content = this.langService.getLanguage();
+        this.content = "Waiting.. Site try connect to server..";
 
     }
 
@@ -45,11 +46,33 @@ export class MainComponent implements OnChanges {
             }
         };
 
+        let reqMenu = {
+            "header": {
+                "uuid": "sdcsd",
+                "language": this.langService.getLanguage(),
+                "page": "main",
+                "command": "menu"
+            },
+            "data": null,
+            "routedData": {
+                "userID": "user1"
+            }
+        };
 
-        let result = this.myService.getConfig('/public', req).subscribe(res => {
+        let result = this.myService.getConfig('/public', req)
+            .subscribe(res => {
 
-            this.content = JSON.stringify(res.data.lable).replace("\"",'').replace("\"",'');;
-        });
+                this.content = JSON.stringify(res.data.lable)
+                                                .replace("\"", '')
+                                                .replace("\"", '');
+            });
+
+        let result1 = this.myService.getConfig('/public', reqMenu)
+            .subscribe(res => {
+                this.menuData = res.data.data;
+            });
+
+        //console.log("lalala-> " + this.menuData[0].nameMenu);
     }
 
 

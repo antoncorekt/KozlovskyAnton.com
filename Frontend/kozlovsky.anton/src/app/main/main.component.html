@@ -1,8 +1,17 @@
 <div class="main">
 
-    <h1 style="background-color:aquamarine;">
+    <div class="center-lable">
         {{content}}
-    </h1>
+    </div>
 
+    <div class="menu">
+
+        <div class="menu-item" *ngFor="let menu of menuData">
+            <div class="menu-name">{{menu.nameMenu}}</div>
+            <div class="menu-info">{{menu.nameMenuInfo}}</div>
+
+        </div>
+
+    </div>
 
 </div>
