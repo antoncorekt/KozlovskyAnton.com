@@ -1,6 +1,7 @@
 package com.kozlovsky.pages.main.api.message;
 
 import com.kozlovsky.common.protocol.ResponseData;
+import com.kozlovsky.pages.main.api.dataclasses.DataMenuResponse;
 
 import java.util.List;
 
@@ -9,22 +10,13 @@ import java.util.List;
  */
 public class MenuResponse implements ResponseData {
 
-    private List<String> menuName;
-    private List<String> menuComment;
+    private List<DataMenuResponse> data;
 
-    public List<String> getMenuName() {
-        return menuName;
+    public List<DataMenuResponse> getData() {
+        return data;
     }
 
-    public void setMenuName(List<String> menuName) {
-        this.menuName = menuName;
-    }
-
-    public List<String> getMenuComment() {
-        return menuComment;
-    }
-
-    public void setMenuComment(List<String> menuComment) {
-        this.menuComment = menuComment;
+    public void setData(List<DataMenuResponse> data) {
+        this.data = data;
     }
 }

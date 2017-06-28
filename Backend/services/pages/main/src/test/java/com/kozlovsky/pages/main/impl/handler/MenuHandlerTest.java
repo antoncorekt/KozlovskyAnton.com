@@ -5,6 +5,7 @@ import com.kozlovsky.common.protocol.ActionHeader;
 import com.kozlovsky.common.protocol.Request;
 import com.kozlovsky.common.protocol.Response;
 import com.kozlovsky.common.resources.service.FileReaderService;
+import com.kozlovsky.pages.main.api.dataclasses.DataMenuResponse;
 import com.kozlovsky.pages.main.api.message.CenterLableRequest;
 import com.kozlovsky.pages.main.api.message.CenterLableResponse;
 import com.kozlovsky.pages.main.api.message.MenuRequest;
@@ -58,9 +59,9 @@ public class MenuHandlerTest {
 
         Response<MenuResponse> response = menuHandler.handleWork(request);
 
-        if(response!=null && response.getData()!=null) {
+        if(response!=null && response.getData()!=null) { // todo create normal test
 
-            List<String> nameList = response.getData().getMenuName();
+            List<DataMenuResponse> nameList = response.getData().getData();
 
             System.out.println(nameList.get(nameList.size() - 1));
 

@@ -10,6 +10,7 @@ import com.kozlovsky.common.protocol.util.Status;
 import com.kozlovsky.common.resources.Util.Lang;
 import com.kozlovsky.common.resources.service.FileReaderService;
 import com.kozlovsky.common.router.api.AbstractRequestHandler;
+import com.kozlovsky.pages.main.api.dataclasses.DataMenuResponse;
 import com.kozlovsky.pages.main.api.message.MenuRequest;
 import com.kozlovsky.pages.main.api.message.MenuResponse;
 import com.kozlovsky.pages.main.api.router.MainPageRequestHandler;
@@ -51,27 +52,33 @@ public class MenuHandler extends AbstractRequestHandler<MenuRequest, MenuRespons
 
             MenuResponse menuResponse = new MenuResponse();
 
-            List<String> nameList = new ArrayList<>();
-            nameList.add(fileReaderService.getValue("main",lang,"menu-blog"));
-            nameList.add(fileReaderService.getValue("main",lang,"menu-portfolio"));
-            nameList.add(fileReaderService.getValue("main",lang,"menu-cv"));
-            nameList.add(fileReaderService.getValue("main",lang,"menu-about"));
+            List<DataMenuResponse> nameList = new ArrayList<>();
+            nameList.add(new DataMenuResponse(
+                    fileReaderService.getValue("main",lang,"menu-blog"),
+                    fileReaderService.getValue("main",lang,"menu-blog-info"))
+            );
+            nameList.add(new DataMenuResponse(
+                    fileReaderService.getValue("main",lang,"menu-portfolio"),
+                    fileReaderService.getValue("main",lang,"menu-portfolio-info"))
+            );
+            nameList.add(new DataMenuResponse(
+                    fileReaderService.getValue("main",lang,"menu-cv"),
+                    fileReaderService.getValue("main",lang,"menu-cv-info"))
+            );
+            nameList.add(new DataMenuResponse(
+                    fileReaderService.getValue("main",lang,"menu-about"),
+                    fileReaderService.getValue("main",lang,"menu-about-info"))
+            );
+
+
             if(accessServise.getAccessLevel(accessID) == AccessLevel.ADMIN){
-                nameList.add(fileReaderService.getValue("main",lang,"menu-admin"));
+                nameList.add(new DataMenuResponse(
+                        fileReaderService.getValue("main",lang,"menu-admin"),
+                        fileReaderService.getValue("main",lang,"menu-admin-info"))
+                );
             }
 
-            menuResponse.setMenuName(nameList);
-
-            List<String> nameInfoList = new ArrayList<>();
-            nameInfoList.add(fileReaderService.getValue("main",lang,"menu-blog-info"));
-            nameInfoList.add(fileReaderService.getValue("main",lang,"menu-portfolio-info"));
-            nameInfoList.add(fileReaderService.getValue("main",lang,"menu-cv-info"));
-            nameInfoList.add(fileReaderService.getValue("main",lang,"menu-about-info"));
-            if(accessServise.getAccessLevel(accessID) == AccessLevel.ADMIN){
-                nameInfoList.add(fileReaderService.getValue("main",lang,"menu-admin-info"));
-            }
-
-            menuResponse.setMenuComment(nameInfoList);
+            menuResponse.setData(nameList);
 
             return (Response<MenuResponse>) ResponseFactory.createResponse(header,menuResponse, Status.OK);
 
