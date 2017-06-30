@@ -31,3 +31,18 @@ END
 BEGIN menu-admin-info^
 Доступ к админ-панели
 END
+BEGIN menu-blog-small^
+Blog
+END
+BEGIN menu-about-small^
+About
+END
+BEGIN menu-portfolio-small^
+Portfolio
+END
+BEGIN menu-cv-small^
+CV
+END
+BEGIN menu-admin-small^
+Admin
+END

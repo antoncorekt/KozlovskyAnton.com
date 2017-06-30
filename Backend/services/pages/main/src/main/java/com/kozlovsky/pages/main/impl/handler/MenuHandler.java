@@ -55,26 +55,36 @@ public class MenuHandler extends AbstractRequestHandler<MenuRequest, MenuRespons
             List<DataMenuResponse> nameList = new ArrayList<>();
             nameList.add(new DataMenuResponse(
                     fileReaderService.getValue("main",lang,"menu-blog"),
-                    fileReaderService.getValue("main",lang,"menu-blog-info"))
+                    fileReaderService.getValue("main",lang,"menu-blog-info"),
+                    "blog",
+                    fileReaderService.getValue("main",lang,"menu-blog-small"))
             );
             nameList.add(new DataMenuResponse(
                     fileReaderService.getValue("main",lang,"menu-portfolio"),
-                    fileReaderService.getValue("main",lang,"menu-portfolio-info"))
+                    fileReaderService.getValue("main",lang,"menu-portfolio-info"),
+                    "portfolio",
+                    fileReaderService.getValue("main",lang,"menu-portfolio-small"))
             );
             nameList.add(new DataMenuResponse(
                     fileReaderService.getValue("main",lang,"menu-cv"),
-                    fileReaderService.getValue("main",lang,"menu-cv-info"))
+                    fileReaderService.getValue("main",lang,"menu-cv-info"),
+                    "cv",
+                    fileReaderService.getValue("main",lang,"menu-cv-small"))
             );
             nameList.add(new DataMenuResponse(
                     fileReaderService.getValue("main",lang,"menu-about"),
-                    fileReaderService.getValue("main",lang,"menu-about-info"))
+                    fileReaderService.getValue("main",lang,"menu-about-info"),
+                    "about",
+                    fileReaderService.getValue("main",lang,"menu-about-small"))
             );
 
 
             if(accessServise.getAccessLevel(accessID) == AccessLevel.ADMIN){
                 nameList.add(new DataMenuResponse(
                         fileReaderService.getValue("main",lang,"menu-admin"),
-                        fileReaderService.getValue("main",lang,"menu-admin-info"))
+                        fileReaderService.getValue("main",lang,"menu-admin-info"),
+                        "admin",
+                        fileReaderService.getValue("main",lang,"menu-admin-small"))
                 );
             }
 
