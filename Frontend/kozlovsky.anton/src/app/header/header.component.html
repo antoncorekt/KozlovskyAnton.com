@@ -12,8 +12,18 @@
   </div>
   
 </div>
+
+<!--<div style="color:white" > <h2> test - {{test}}</h2></div>-->
+
+
 <!--<h4>You choose {{lang}} language </h4> -->
-<app-main-component [lang] = "lang" *ngIf="page == '/main'">
-   
+<app-main-component [lang] = "lang" [test] = "test" *ngIf="page == '/main'">
+             
 </app-main-component>
+
+<app-about-component [lang] = "lang"  *ngIf="page == '/about'">
+   
+</app-about-component>
+
+
 <!--<router-outlet [lang] = "lang"></router-outlet> -->

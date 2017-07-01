@@ -2,6 +2,7 @@ import { Component, Injectable, OnInit, Input, NgModule, OnChanges, SimpleChange
 import { myHTTPService } from '../http/HTTPService';
 import { LanguageService } from '../util/LanguageService';
 import { AppComponent } from '../app.component';
+import { HeaderComponent } from '../header/header.component';
 
 
 @Component({
@@ -11,20 +12,19 @@ import { AppComponent } from '../app.component';
     providers: [myHTTPService, LanguageService]
 })
 
-@NgModule({
-    bootstrap: [AppComponent, [LanguageService]]
-})
 
-@Injectable()
+
 export class MainComponent implements OnChanges {
 
     @Input() lang: String;
-
+  
+    @Input() test: String;
 
     content: String;
     menuData: Object;
 
-    constructor(private myService: myHTTPService,
+    constructor(
+        private myService: myHTTPService,
         private langService: LanguageService) {
 
         this.content = "Waiting.. Site try connect to server..";
@@ -65,6 +65,7 @@ export class MainComponent implements OnChanges {
                 this.content = JSON.stringify(res.data.lable)
                                                 .replace("\"", '')
                                                 .replace("\"", '');
+                console.log(this.content);
             });
 
         let result1 = this.myService.getConfig('/public', reqMenu)
@@ -72,9 +73,19 @@ export class MainComponent implements OnChanges {
                 this.menuData = res.data.data;
             });
 
-        //console.log("lalala-> " + this.menuData[0].nameMenu);
+        console.log("lalala-> " + this.langService.getLanguage());
     }
 
+
+    onClicMenu(s:String):void{
+      
+        if (s === "about"){
+           
+            this.test = "lolol";
+            
+        }
+        
+    }
 
 
 

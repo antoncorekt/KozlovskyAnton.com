@@ -31,7 +31,7 @@ export class myHTTPService {
      
 
     return this.http
-      .post('http://192.168.1.127:8080/root'+api,req)
+      .post('http://192.168.31.220:8080/root'+api,req)
       .map(res => res.json());
   }
 } 

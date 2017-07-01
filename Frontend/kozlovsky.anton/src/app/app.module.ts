@@ -8,6 +8,8 @@ import {RouterModule, Routes} from '@angular/router';
 import { AppComponent } from './app.component';
 import { MainComponent} from './main/main.component'
 import { HeaderComponent} from './header/header.component';
+import { AboutComponent } from './about/about.component';
+
 import { LanguageService } from './util/LanguageService';
 import { LocalStorageModule } from 'angular-2-local-storage';
 
@@ -16,6 +18,10 @@ const appRoutes: Routes = [
       {
         path: 'main',
         component: MainComponent
+      },
+      {
+        path: 'about',
+        component: AboutComponent
       }
 ];
 
@@ -24,7 +30,8 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     MainComponent,
-    HeaderComponent
+    HeaderComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
