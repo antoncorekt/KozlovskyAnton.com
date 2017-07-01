@@ -93,6 +93,7 @@ public class MenuHandler extends AbstractRequestHandler<MenuRequest, MenuRespons
             return (Response<MenuResponse>) ResponseFactory.createResponse(header,menuResponse, Status.OK);
 
         }catch (Exception e){
+            System.out.println("MenuHandler error " + e.getMessage());
             return (Response<MenuResponse>) ResponseFactory.createResponse(Status.INTERNAL_SERVER_ERROR,e.getMessage());
         }
 

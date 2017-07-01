@@ -47,6 +47,7 @@ public class CenterLableHandler extends AbstractRequestHandler<CenterLableReques
             return (Response<CenterLableResponse>) ResponseFactory.createResponse(header,response, Status.OK);
 
         }catch (Exception e){
+            System.out.println("CenterLableHandler error " + e.getMessage());
             return (Response<CenterLableResponse>) ResponseFactory.createResponse(Status.INTERNAL_SERVER_ERROR, e.getMessage());
         }
 
