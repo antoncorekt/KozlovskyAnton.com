@@ -1,8 +1,16 @@
 
 .header {
-    
+     display: flex;
+     flex-direction: row-reverse;
+
      color: white;
+     justify-content: space-between;
+
     background-color: rgba(40, 42, 66,0.2);
+}
+
+.back {
+    padding: 15px;
 }
 
 .lang-group {

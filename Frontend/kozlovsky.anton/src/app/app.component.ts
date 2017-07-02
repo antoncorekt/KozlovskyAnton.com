@@ -2,13 +2,14 @@ import { Component, Injectable, NgModule } from '@angular/core';
 import {myHTTPService} from './http/HTTPService';
 import { LanguageService } from './util/LanguageService';
 import { MainComponent } from './main/main.component';
+import { NavigationService } from './util/NavigationService';
 
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  providers: [ myHTTPService, LanguageService, MainComponent]
+  providers: [ myHTTPService, LanguageService, MainComponent, NavigationService ]
 })
 
 

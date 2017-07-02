@@ -1,4 +1,8 @@
-<div class="header">  
+<div class="header"> 
+
+ 
+
+
   <div class="lang-group" >
     <div class="lang" id="rus" (click)="onClickMe('ru')">
      RU
@@ -10,6 +14,10 @@
       PL
     </div>
   </div>
+
+  <div class="back" *ngIf="navService.showBack()" (click)="back()">
+    Back
+  </div> 
   
 </div>
 

@@ -5,12 +5,12 @@ import { LanguageService } from '../util/LanguageService';
 @Injectable()
 export class NavigationService {
 
-    private pages:Array<String>;
+    private pages:Array<String> = new Array<String>();
 
     constructor(
         private myService: myHTTPService,
         private langService: LanguageService){
-            
+        
         this.pages.push('/main');
     }
 
@@ -18,8 +18,9 @@ export class NavigationService {
         this.pages.push(page);
     }
 
-    back():void{
+    back():String{
         this.pages.pop();
+        return this.pages[this.pages.length-1];
     }
 
     getAllPages():Array<String>{
@@ -31,5 +32,9 @@ export class NavigationService {
         return null;
     }
 
+    showBack():boolean{
+        
+        return (this.pages.length>1)?true:false;
+    }
 
 }

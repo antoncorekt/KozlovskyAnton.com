@@ -82,8 +82,8 @@ export class MainComponent implements OnChanges {
     onClicMenu(s:String):void{
       
         if (s === "about"){
-           
             this.page_router.emit('/about');
+
             this.navService.addPage('about');        
         }
         
