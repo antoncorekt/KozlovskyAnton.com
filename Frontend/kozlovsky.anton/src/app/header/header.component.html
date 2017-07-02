@@ -17,7 +17,7 @@
 
 
 <!--<h4>You choose {{lang}} language </h4> -->
-<app-main-component [lang] = "lang" [test] = "test" *ngIf="page == '/main'">
+<app-main-component [lang] = "lang" (page_router)="onNotify($event)" *ngIf="page == '/main'">
              
 </app-main-component>
 

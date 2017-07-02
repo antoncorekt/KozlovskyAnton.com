@@ -1,6 +1,7 @@
-import { Component, Injectable, OnInit, Input, NgModule, OnChanges, SimpleChange } from '@angular/core';
+import { Component,Output,EventEmitter, Injectable, OnInit, Input, NgModule, OnChanges, SimpleChange } from '@angular/core';
 import { myHTTPService } from '../http/HTTPService';
 import { LanguageService } from '../util/LanguageService';
+import { NavigationService } from '../util/NavigationService';
 import { AppComponent } from '../app.component';
 import { HeaderComponent } from '../header/header.component';
 
@@ -18,14 +19,15 @@ export class MainComponent implements OnChanges {
 
     @Input() lang: String;
   
-    @Input() test: String;
+    @Output() page_router: EventEmitter<string> = new EventEmitter<string>();
 
     content: String;
     menuData: Object;
 
     constructor(
         private myService: myHTTPService,
-        private langService: LanguageService) {
+        private langService: LanguageService,
+        private navService: NavigationService) {
 
         this.content = "Waiting.. Site try connect to server..";
 
@@ -81,8 +83,8 @@ export class MainComponent implements OnChanges {
       
         if (s === "about"){
            
-            this.test = "lolol";
-            
+            this.page_router.emit('/about');
+            this.navService.addPage('about');        
         }
         
     }

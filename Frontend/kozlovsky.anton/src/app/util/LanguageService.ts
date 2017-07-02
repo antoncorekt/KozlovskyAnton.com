@@ -3,8 +3,7 @@ import { LocalStorageService } from 'angular-2-local-storage';
 
 @Injectable()
 export class LanguageService {
-    public langChanged: EventEmitter<String> = new EventEmitter<String>();
-
+    
     constructor ( private localStorageService: LocalStorageService ) {
      
     }
@@ -26,10 +25,10 @@ export class LanguageService {
         if (lang==="pl" || lang==="en" || lang==="ru") 
         {
            this.localStorageService.add("lang",lang);
-           this.langChanged.next(lang);
+         
            return;
         }
-        this.langChanged.next("en");
+       
         this.localStorageService.add("lang","en");
     }
 

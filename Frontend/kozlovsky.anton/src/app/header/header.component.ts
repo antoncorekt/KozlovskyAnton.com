@@ -22,12 +22,12 @@ import { AppComponent } from '../app.component';
 })
 
 
-export class HeaderComponent  implements OnChanges {
+export class HeaderComponent  {
   @Input()
   lang:String = this.langService.getLanguage();
 
   @Input()
-  test: String;
+  page_router: String;
 
   
   page: String;
@@ -36,11 +36,13 @@ export class HeaderComponent  implements OnChanges {
               private langService: LanguageService
                ){
       this.page = "/main";
-      this.test = "test";
+      this.page_router = "test";
   }
 
-  lollol():void {
-    this.page = "/about";
+  onNotify(message:string):void {
+
+  
+     this.page = message;
   }
 
   onClickMe(lang: String): void {
@@ -48,13 +50,9 @@ export class HeaderComponent  implements OnChanges {
     this.langService.setLanguage(lang);
     this.lang = lang;
     
-    this.test = "header change to " + lang; 
+
     console.log("change to " + this.langService.getLanguage());  
             
   }
 
-   ngOnChanges(changes: { [propKey: string]: SimpleChange }) {
-
-    this.test = "yeeeea"!
-   }
 }
