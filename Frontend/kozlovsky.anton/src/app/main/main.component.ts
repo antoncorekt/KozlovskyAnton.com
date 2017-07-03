@@ -50,7 +50,7 @@ export class MainComponent implements OnChanges {
 
         let reqMenu = {
             "header": {
-                "uuid": "sdcsd",
+                "uuid": "sdsd",
                 "language": this.langService.getLanguage(),
                 "page": "main",
                 "command": "menu"

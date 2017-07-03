@@ -1,3 +1,8 @@
+.fixed-header {
+    position: fixed;
+    width: 100%;
+}
+
 
 .header {
      display: flex;
@@ -6,11 +11,32 @@
      color: white;
      justify-content: space-between;
 
-    background-color: rgba(40, 42, 66,0.2);
+    background-color: rgba(40, 42, 66,0.9);
 }
 
 .back {
     padding: 15px;
+}
+
+.right-group{
+    display: flex;
+    
+    flex-direction: row;
+    
+
+}
+
+.menu {
+    display: flex;
+    margin-right: 35px;
+}
+
+.menu-item {
+    padding: 15px;
+}
+
+.menu-item:hover {
+    background-color: rgb(0,0, 75);
 }
 
 .lang-group {
@@ -21,12 +47,13 @@
 }
 
 .lang {
-    border: 1px solid rgba(40, 42, 66, 0.2);;
+    border: 1px solid rgba(40, 42, 66, 0.9);;
     padding: 15px;
-    background-color: rgba(40, 42, 66 0.2);
 }
 
-
+.router {
+    padding-top: 55px;
+}
 
 /*#rus {
     background-color: rgb(0,0, 15);

@@ -21,7 +21,7 @@ export class HeaderComponent  {
 
   page: String;
 
-  
+  menuData: Object;
 
   constructor(private myService: myHTTPService,
               private langService: LanguageService,
@@ -29,6 +29,7 @@ export class HeaderComponent  {
                ){
       this.page = "/main";
       this.page_router = "test";
+      this.getMenu();
   }
 
   onNotify(message:string):void {
@@ -43,13 +44,37 @@ export class HeaderComponent  {
     this.lang = lang;
     
     console.log("change to " + this.langService.getLanguage()); 
-            
+
+    if(this.page != '/main'){
+      this.getMenu();
+    }  
   }
 
   back():void{
     
      this.page = this.navService.back();
     
+  }
+
+
+  getMenu(): void {
+    let reqMenu = {
+            "header": {
+                "uuid": "sdcsd",
+                "language": this.langService.getLanguage(),
+                "page": "main",
+                "command": "menu"
+            },
+            "data": null,
+            "routedData": {
+                "userID": "user1"
+            }
+        };
+
+    let result1 = this.myService.getConfig('/public', reqMenu)
+            .subscribe(res => {
+                this.menuData = res.data.data;
+            });
   }
 
 }

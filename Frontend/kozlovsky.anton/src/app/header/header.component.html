@@ -1,37 +1,51 @@
-<div class="header"> 
+<div class="fixed-header">
+  <div class="header">
 
- 
+    <div class="rigth-group" style="display:flex; flex-direction: row-reverse;">
 
+      <div class="lang-group" >
+        <div class="lang" id="rus" (click)="onClickMe('ru')">
+          RU
+        </div>
+        <div class="lang" id="eng" (click)="onClickMe('en')">
+          EN
+        </div>
+        <div class="lang" id="pol" (click)="onClickMe('pl')">
+          PL
+        </div>
+      </div>
 
-  <div class="lang-group" >
-    <div class="lang" id="rus" (click)="onClickMe('ru')">
-     RU
+      <div class="menu" *ngIf="page == '/about'">
+
+        <div class="menu-item" *ngFor="let menu of menuData">
+          <div class="menu-text">
+            {{menu.id}}
+          </div>
+        </div>
+
+      </div>
+
     </div>
-    <div class="lang" id="eng" (click)="onClickMe('en')">
-      EN
-    </div> 
-    <div class="lang" id="pol" (click)="onClickMe('pl')">
-      PL
+
+    <div class="back" *ngIf="navService.showBack()" (click)="back()">
+      Back
     </div>
+
   </div>
 
-  <div class="back" *ngIf="navService.showBack()" (click)="back()">
-    Back
-  </div> 
-  
 </div>
 
 <!--<div style="color:white" > <h2> test - {{test}}</h2></div>-->
 
+<div class="router">
+  <!--<h4>You choose {{lang}} language </h4> -->
+  <app-main-component [lang]="lang" (page_router)="onNotify($event)" *ngIf="page == '/main'">
 
-<!--<h4>You choose {{lang}} language </h4> -->
-<app-main-component [lang] = "lang" (page_router)="onNotify($event)" *ngIf="page == '/main'">
-             
-</app-main-component>
+  </app-main-component>
 
-<app-about-component [lang] = "lang"  *ngIf="page == '/about'">
-   
-</app-about-component>
+  <app-about-component [lang]="lang" *ngIf="page == '/about'">
 
+  </app-about-component>
+</div>
 
 <!--<router-outlet [lang] = "lang"></router-outlet> -->
