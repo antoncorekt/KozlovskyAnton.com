@@ -3,7 +3,7 @@
 
     <div class="rigth-group" style="display:flex; flex-direction: row-reverse;">
 
-      <div class="lang-group" >
+      <div class="lang-group">
         <div class="lang" id="rus" (click)="onClickMe('ru')">
           RU
         </div>
@@ -15,11 +15,17 @@
         </div>
       </div>
 
-      <div class="menu" *ngIf="page == '/about'">
+      <div class="menu" *ngIf="page != '/main'">
+
+        <div class="menu-item">
+          <div class="menu-text">
+            {{home}}
+          </div>
+        </div>
 
         <div class="menu-item" *ngFor="let menu of menuData">
           <div class="menu-text">
-            {{menu.id}}
+            {{menu.smallName}}
           </div>
         </div>
 
@@ -27,8 +33,56 @@
 
     </div>
 
-    <div class="back" *ngIf="navService.showBack()" (click)="back()">
-      Back
+    <div class="c-hamburger c-hamburger--rot " id="menu" (click)="menuClic()">
+      <span>toggle menu</span>
+    </div>
+
+    <div class="left-group">
+      <div class="back" *ngIf="navService.showBack()" (click)="back()">
+        &larr;
+      </div>
+
+      <div class="textbox-container">
+
+        <input type="password" value="" placeholder={{inputText}}>
+
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <div id="mobile">
+    <div class="mob-menu" *ngIf="menuClicVar==true">
+
+       <div class="mob-lang-group">
+        <div class="mob-lang" id="rus" (click)="onClickMe('ru')">
+          RU
+        </div>
+        <div class="mob-lang" id="eng" (click)="onClickMe('en')">
+          EN
+        </div>
+        <div class="mob-lang" id="pol" (click)="onClickMe('pl')">
+          PL
+        </div>
+      </div>
+
+      <div *ngIf="page != '/main'">
+        <div class="mob-menu-item">
+          <div class="mob-menu-text">
+            {{home}}
+          </div>
+        </div>
+
+        <div class="mob-menu-item" *ngFor="let menu of menuData">
+          <div class="mob-menu-text">
+            {{menu.smallName}}
+          </div>
+        </div>
+      </div>
+
+     
     </div>
 
   </div>

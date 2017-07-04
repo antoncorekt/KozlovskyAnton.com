@@ -1,6 +1,7 @@
 .fixed-header {
     position: fixed;
     width: 100%;
+    font-family: Oxygen, Helvetica, sans-serif
 }
 
 
@@ -14,21 +15,22 @@
     background-color: rgba(40, 42, 66,0.9);
 }
 
-.back {
-    padding: 15px;
-}
+
 
 .right-group{
     display: flex;
-    
+     
     flex-direction: row;
-    
+   
 
 }
 
 .menu {
     display: flex;
     margin-right: 35px;
+    font-weight:bold;
+    text-transform: capitalize;
+    cursor: pointer;
 }
 
 .menu-item {
@@ -43,39 +45,253 @@
     display: flex;
     
     flex-direction: row-reverse;
-
+    cursor: pointer;
+    
 }
 
 .lang {
-    border: 1px solid rgba(40, 42, 66, 0.9);;
+    border: 1px solid rgba(40, 42, 66, 0.9);
     padding: 15px;
 }
-
-.router {
-    padding-top: 55px;
-}
-
-/*#rus {
-    background-color: rgb(0,0, 15);
-    border: 1px solid black;
-}
-
-#eng {
-    background-color: rgb(0,0, 15);
-    border: 1px solid black;
-}
-
-#pol {
-    background-color: rgb(0,0, 15);
-    border: 1px solid black;
-}*/
 
 .lang:hover {
     border: 1px solid rgb(255,255, 255);
     background-color: rgb(0,0, 75);
 }
 
+.router {
+    padding-top: 55px;
+}
+
 a {
     color: white;
     -webkit-text-stroke-color: red;
 }
+
+.back {
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 40px;
+    color: rgb(255,255, 255,0.7);
+    border: 1px solid rgba(40, 42, 66, 0.1);
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+ /*<img src="../../assets/img/back.png" width="35" height="35">*/
+.back:hover {
+    padding-left: 10px;
+    padding-right: 10px;
+    color: rgb(255,255, 255);
+    border: 1px solid rgb(255,255, 255);
+  
+
+}
+
+.left-group {
+    display: flex;
+    
+    flex-direction: row;
+}
+.textbox-container {
+     display: flex; 
+    flex-direction: row;
+    padding:15px;
+    
+}
+
+INPUT[type="password"] {
+    background-color: rgba(100, 92, 106, 0.4);
+    color: #ffe;
+    border: 1px solid rgba(100, 92, 106, 0.9);
+    border-radius: 5px;
+    
+    width: 150px;
+    padding-left: 10px;
+    margin-left: 10px;
+
+        
+}
+
+INPUT[type="password"]:hover {
+     border: 1px solid rgba(150, 142, 156, 0.9);
+}
+
+.textboxt-lable{
+    color: rgba(255,255, 255,0.3);
+     
+}
+
+
+.c-hamburger {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  width: 53px;
+  height: 53px;
+  font-size: 0;
+  text-indent: -9999px;
+  appearance: none;
+  box-shadow: none;
+  border-radius: none;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.c-hamburger:focus {
+  outline: none;
+}
+
+.c-hamburger span {
+  display: block;
+  position: absolute;
+  top: 24px;
+  left: 11px;
+  right: 11px;
+  height: 4px;
+  background: white;
+}
+
+.c-hamburger span::before,
+.c-hamburger span::after {
+  position: absolute;
+  display: block;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: #fff;
+  content: "";
+}
+
+.c-hamburger span::before {
+  top: -10px;
+}
+
+.c-hamburger span::after {
+  bottom: -10px;
+}
+
+.c-hamburger--rot {
+  background-color: rgba(40, 42, 66,0.9);
+}
+
+.c-hamburger--rot span {
+  transition: transform 0.3s;
+}
+
+/* active state, i.e. menu open */
+.btmenu-selected {
+  background-color: #166888;
+}
+
+.btmenu-selected span {
+  transform: rotate(90deg);
+}
+
+.mobile-header::selection {
+    background: #ffb7b7; /* Safari */
+}
+
+.mobile-header {
+    background-color: rgba(40, 42, 66, 0.9);
+    display: flex; 
+    flex-direction: column;
+    width: 100%;
+    color: white;
+    border-top: 1px solid rgba(150, 142, 156, 0.9);
+}
+
+.mob-menu {
+    display: flex;
+    flex-direction: column;
+    font-weight:bold;
+    text-transform: capitalize;
+    cursor: pointer;
+    width: 100%;
+}
+
+.mob-menu-item {
+    padding: 15px;
+}
+
+.mob-menu-item:hover {
+    background-color: rgba(0,0, 75,0.5);
+}
+
+.mob-lang-group {
+    display: flex;
+    flex-direction: row-reverse;
+    cursor: pointer;   
+}
+
+.mob-lang {   
+    padding: 15px;
+}
+
+.mob-lang:hover {
+    background-color: rgb(0,0, 75);
+}
+
+@media screen and (max-width: 20500px) and (min-width:888px){
+    .lang-group{
+        visibility: visible;
+      
+    }
+    .menu{
+        visibility: visible;
+       
+    }
+
+    
+    .c-hamburger{
+        visibility: collapse;
+        width: 0px;
+    }
+
+    .textbox-lable{
+        visibility: visible;
+    }
+
+   
+     INPUT[type="password"] {
+        width: 150px;
+
+    }
+}
+
+@media screen and (max-width: 887px) and (min-width:1px){
+    .lang-group{
+        visibility: collapse;
+        width: 0px;
+    }
+
+    .menu{
+        visibility: collapse;
+        width: 0px;
+    }
+
+    .right-group{
+        visibility: collapse;
+        width: 0px;
+    }
+
+    .textbox-lable{
+        visibility: collapse;
+    }
+
+    .c-hamburger{
+        visibility: visible;
+        order:-1;
+    }
+     INPUT[type="password"] {
+        width: 110px;
+    }
+
+    .back{
+        font-size: 30px;
+    }
+}
+

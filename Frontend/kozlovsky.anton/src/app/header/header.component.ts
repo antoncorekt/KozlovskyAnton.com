@@ -23,6 +23,12 @@ export class HeaderComponent  {
 
   menuData: Object;
 
+  home:String;
+  inputText:String;
+  innerWidth: any;
+
+  menuClicVar:boolean;
+
   constructor(private myService: myHTTPService,
               private langService: LanguageService,
               private navService: NavigationService
@@ -30,6 +36,26 @@ export class HeaderComponent  {
       this.page = "/main";
       this.page_router = "test";
       this.getMenu();
+      this.setUiTextLang();
+      this.innerWidth = (window.screen.width) + "px";
+      this.menuClicVar = false;
+  }
+
+
+  menuClic():void{
+    let menu = document.getElementById("menu");
+    let mob = document.getElementById("mobile");
+
+    if(this.menuClicVar){
+      menu.className = "c-hamburger c-hamburger--rot";
+      mob.className = "";
+      this.menuClicVar = !this.menuClicVar;
+    }
+    else{
+      menu.className += " btmenu-selected";
+       mob.className = "mobile-header";
+      this.menuClicVar = !this.menuClicVar;
+    }
   }
 
   onNotify(message:string):void {
@@ -47,7 +73,10 @@ export class HeaderComponent  {
 
     if(this.page != '/main'){
       this.getMenu();
-    }  
+    }
+
+    this.setUiTextLang();
+    
   }
 
   back():void{
@@ -56,6 +85,22 @@ export class HeaderComponent  {
     
   }
 
+  setUiTextLang():void{
+    this.lang = this.langService.getLanguage();
+    if(this.lang=='pl') {
+      this.home = "Głowna";
+      this.inputText = "Wpisz swój id: ";
+    }
+    if(this.lang=='en'){
+      this.home = "Main";
+      this.inputText = "Input your id: ";
+    } 
+
+    if(this.lang=='ru'){
+       this.home = "Главная";
+       this.inputText = "Введите свой id: ";
+    }
+  }
 
   getMenu(): void {
     let reqMenu = {
