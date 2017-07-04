@@ -35,10 +35,10 @@ BEGIN menu-blog-small^
 Blog
 END
 BEGIN menu-about-small^
-About
+O &nbsp; mnie
 END
 BEGIN menu-portfolio-small^
-Portfolio
+Moja &nbsp; praca
 END
 BEGIN menu-cv-small^
 CV

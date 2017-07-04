@@ -32,16 +32,16 @@ BEGIN menu-admin-info^
 Доступ к админ-панели
 END
 BEGIN menu-blog-small^
-Blog
+Блог
 END
 BEGIN menu-about-small^
-About
+О &nbsp; себе
 END
 BEGIN menu-portfolio-small^
-Portfolio
+Портфолио
 END
 BEGIN menu-cv-small^
-CV
+Резюме
 END
 BEGIN menu-admin-small^
 Admin
