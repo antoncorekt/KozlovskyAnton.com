@@ -14,7 +14,7 @@
 .center-lable {
     display: flex;
     justify-content: center;
-   text-align: center;
+    text-align: center;
     font-size: 50px;
     color: white;
 }

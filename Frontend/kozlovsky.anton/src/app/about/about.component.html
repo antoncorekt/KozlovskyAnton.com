@@ -1,7 +1,20 @@
-<div class="about">
+<div class="main">
 
-    <h1> About PAGE </h1>
+    <div class="center-lable">
+        {{content}}
+    </div>
 
-    <h2> page - {{page}}</h2>
+
+<!--<div style="color:white" > <h2> test[main] - {{test}}</h2></div>-->
+
+    <div class="menu">
+
+        <div class="menu-item" *ngFor="let menu of menuData" (click)="onClicMenu(menu.id)">
+            <div class="menu-name">{{menu.nameMenu}}</div>
+            <div class="menu-info">{{menu.nameMenuInfo}}</div>
+
+        </div>
+
+    </div>
 
 </div>

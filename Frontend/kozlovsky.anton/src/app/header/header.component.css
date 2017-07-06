@@ -295,3 +295,8 @@ INPUT[type="password"]:hover {
     }
 }
 
+.nav-path {
+    color: white;
+    padding: 15px;
+    font-size: 20px;
+}

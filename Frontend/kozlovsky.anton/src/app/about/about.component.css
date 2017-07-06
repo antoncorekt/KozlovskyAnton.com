@@ -1,6 +1,70 @@
-.about {
+.main {
+    display: flex;
+    flex-direction: column;  
+    justify-content: space-around;
+
     height:100vh;
     margin: 0px; 
     padding: 0px;
+   
+  
+    color: rgb(240, 240, 240);
+}
+
+.center-lable {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 50px;
     color: white;
 }
+
+.menu {
+    display: flex;
+ 
+     justify-content: space-around;
+    flex-wrap:wrap;
+    align-content: space-around;
+
+    font-size: 21px;
+
+    visibility: hidden;
+}
+
+.menu-item {
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    
+    margin: 10px;     
+    flex-wrap: wrap-reverse;   
+    align-content: center;
+    width: 300px;
+    height: 200px;
+    background-color: rgba(228, 219, 255, 0.7);
+}
+
+.menu-item:hover {
+    box-shadow: 0 0 15px rgba(180, 110, 255,0.5);
+    
+    background-color: rgba(228, 219, 255, 0.9);
+    color: white;
+}
+
+
+.menu-name {
+    font-size: 45px;
+    text-align: center;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    align-content:center;
+    background-color: rgba(60, 50, 71, 0.5);
+}
+
+.menu-info {
+    font-size: 20px;
+    
+    padding: 7px;
+    color: #48088c
+}
+
+
+

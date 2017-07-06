@@ -1,4 +1,4 @@
-import { Component,Output,EventEmitter, Injectable, OnInit, Input, NgModule, OnChanges, SimpleChange } from '@angular/core';
+import { Component,Output,EventEmitter, Injectable, HostListener, OnInit, Input, NgModule, OnChanges, SimpleChange } from '@angular/core';
 import { myHTTPService } from '../http/HTTPService';
 import { LanguageService } from '../util/LanguageService';
 import { NavigationService } from '../util/NavigationService';
@@ -31,6 +31,12 @@ export class MainComponent implements OnChanges {
 
         this.content = "Waiting.. Site try connect to server..";
 
+    }
+
+    @HostListener('window:resize', ['$event'])
+        onResize(event) {
+        
+        console.log(event.target.innerWidth);
     }
 
     ngOnChanges(changes: { [propKey: string]: SimpleChange }) {

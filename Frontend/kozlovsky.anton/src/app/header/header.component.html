@@ -87,11 +87,18 @@
 
   </div>
 
+
+
 </div>
 
 <!--<div style="color:white" > <h2> test - {{test}}</h2></div>-->
 
 <div class="router">
+
+ <!-- <div class="nav-path" *ngIf="navService.showBack()">
+     home / about
+  </div> -->
+
   <!--<h4>You choose {{lang}} language </h4> -->
   <app-main-component [lang]="lang" (page_router)="onNotify($event)" *ngIf="page == '/main'">
 
