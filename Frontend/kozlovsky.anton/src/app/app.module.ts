@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { MainComponent} from './main/main.component'
 import { HeaderComponent} from './header/header.component';
 import { AboutComponent } from './about/about.component';
+import { CvComponent } from './cv/cv.component';
 
 import { LanguageService } from './util/LanguageService';
 import { LocalStorageModule } from 'angular-2-local-storage';
@@ -31,7 +32,8 @@ const appRoutes: Routes = [
     AppComponent,
     MainComponent,
     HeaderComponent,
-    AboutComponent
+    AboutComponent,
+    CvComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,17 @@
+<div class="cv">
+    <div class="nav-skills">
+        <div class="skills" *ngFor="let skill of listSkills">
+            <div class="skills-name">
+                {{skill}}
+            </div>
+        </div>
+    </div>    
+
+    <div class="cv-panel">
+        <div class="panel-skill" *ngFor="let skill of listSkills">
+            <div class="about-skill" id= {{skill}}>
+                {{response[skill]}}
+            </div>    
+        </div>
+    </div>
+</div>

@@ -17,13 +17,13 @@
 
       <div class="menu" *ngIf="page != '/main'">
 
-        <div class="menu-item">
+        <div class="menu-item" (click)="page='/main'">
           <div class="menu-text">
             {{home}}
           </div>
         </div>
 
-        <div class="menu-item" *ngFor="let menu of menuData">
+        <div class="menu-item" *ngFor="let menu of menuData"  (click)="onClicMenuHeader(menu.id)">
           <div class="menu-text">
             {{menu.smallName}}
           </div>
@@ -69,13 +69,13 @@
       </div>
 
       <div *ngIf="page != '/main'">
-        <div class="mob-menu-item">
+        <div class="mob-menu-item" (click)="page='/main'">
           <div class="mob-menu-text">
             {{home}}
           </div>
         </div>
 
-        <div class="mob-menu-item" *ngFor="let menu of menuData">
+        <div class="mob-menu-item" *ngFor="let menu of menuData" (click)="onClicMenuHeader(menu.id)">
           <div class="mob-menu-text">
             {{menu.smallName}}
           </div>
@@ -107,6 +107,12 @@
   <app-about-component [lang]="lang" *ngIf="page == '/about'">
 
   </app-about-component>
+
+  <app-cv-component [lang]="lang" *ngIf="page == '/cv'">
+
+  </app-cv-component>
+
+
 </div>
 
 <!--<router-outlet [lang] = "lang"></router-outlet> -->

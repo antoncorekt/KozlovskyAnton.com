@@ -122,4 +122,18 @@ export class HeaderComponent  {
             });
   }
 
+
+  onClicMenuHeader(s:String):void{
+    if (s === "about"){
+            this.page='/about';
+
+            this.navService.addPage('about');        
+        }
+
+        if (s === "cv"){
+            this.page='/cv';
+
+            this.navService.addPage('cv');        
+        }
+  }
 }

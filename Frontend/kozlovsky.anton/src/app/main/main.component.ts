@@ -92,6 +92,12 @@ export class MainComponent implements OnChanges {
 
             this.navService.addPage('about');        
         }
+
+        if (s === "cv"){
+            this.page_router.emit('/cv');
+
+            this.navService.addPage('cv');        
+        }
         
     }
 
