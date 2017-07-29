@@ -2,6 +2,7 @@ package com.kozlovsky.frontend.rest;
 
 import com.kozlovsky.common.resources.ConfigResources;
 import com.kozlovsky.common.router.configurations.RouterConfig;
+import com.kozlovsky.pages.about.impl.configuration.AboutPageConfig;
 import com.kozlovsky.pages.main.impl.configuration.MainPageConfig;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -15,7 +16,7 @@ import org.springframework.context.annotation.Import;
 @SpringBootApplication
 //@CrossOrigin(origins = "http://localhost:4200")
 @EnableAutoConfiguration
-@Import(value = {ConfigResources.class, RouterConfig.class, MainPageConfig.class})
+@Import(value = {ConfigResources.class, RouterConfig.class, MainPageConfig.class, AboutPageConfig.class})
 public class MainApp {
 
     public static void main(String[] args) {

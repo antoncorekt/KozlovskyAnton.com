@@ -71,7 +71,7 @@ public class HashFileReader extends FileReader {
     @Override
     public String getValue(String key) {
         String s = map.get(key);
-        return (s!=null)?s:"Not found text with key "+key;
+        return (s!=null)?s:"NOT_TRANSLATE";
     }
 
     public Map<String, String> getMap() {

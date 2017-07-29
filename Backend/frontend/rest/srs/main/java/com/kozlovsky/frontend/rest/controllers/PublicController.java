@@ -6,6 +6,7 @@ import com.kozlovsky.common.protocol.util.ResponseBuilder;
 import com.kozlovsky.common.protocol.util.ResponseFactory;
 import com.kozlovsky.common.protocol.util.Status;
 import com.kozlovsky.common.router.api.Handler;
+import com.kozlovsky.pages.about.api.message.GetSkillsRequest;
 import com.kozlovsky.pages.main.api.message.CenterLableRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -34,14 +35,14 @@ public class PublicController {
             return mainRouter.handle(request);
         }
         catch (Exception e){
-            return ResponseFactory.createResponse(Status.BAD_REQUEST);
+            return ResponseFactory.createResponse(Status.BAD_REQUEST,e.getMessage());
         }
     }
 
     @RequestMapping(path = "/test")
     public Request<?> test(){
-        return new Request<CenterLableRequest>(new ActionHeader("id1","pl","main","center")
-        ,null,new RoutedData("user1"));    }
+        return new Request<GetSkillsRequest>(new ActionHeader("id1","pl","main","center")
+        ,new GetSkillsRequest("*"),new RoutedData("user1"));    }
 
 
 }

@@ -13,6 +13,7 @@ import java.io.File;
 @Component
 public class FileReaderService {
 
+    public static final String NOT_TRANSLATE = "NOT_TRANSLATE";
 
     public String getValue(String pageName, Lang lang, String key) throws Exception{
         ClassLoader classLoader = getClass().getClassLoader();

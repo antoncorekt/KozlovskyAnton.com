@@ -52,7 +52,7 @@ public class GetLocalizedPageHandlerTest {
 
         Response<GetLocalizedPageResponse> response = getLocalizedPageHandler.handleWork(request);
 
-        System.out.println(response.getData().getLocPages().get(0));
+       // System.out.println(response.getData().getLocPages().get(0));
 
     }
 
